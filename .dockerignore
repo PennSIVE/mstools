@@ -1,0 +1,6 @@
+**.log
+dev/
+.git/
+build.sh
+Dockerfile
+.dockerignore
