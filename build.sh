@@ -10,4 +10,10 @@
 # run these the first time:
 # docker buildx create --name mstools
 # docker builx use mstools
-docker buildx build --platform linux/arm64,linux/amd64 --build-arg BUILDKIT_INLINE_CACHE=1 -t pennsive/mstools:4.2 -f Dockerfile.short --push . &> $(date +"%Y-%m-%d_%T")_build.log
+docker buildx build --platform linux/arm64,linux/amd64 \
+    --build-arg BUILDKIT_INLINE_CACHE=1 \
+    --cache-from=pennsive/mstools:4.2 \
+    --cache-to=pennsive/mstools:4.2 \
+    -t pennsive/mstools:4.2 \
+    --push . &> $(date +"%Y-%m-%d_%T")_build.log
+       
