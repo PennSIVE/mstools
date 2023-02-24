@@ -1,7 +1,5 @@
 #!/bin/bash
-# runs test for rtapas
-
-# set defaults
+# runs test fof pennsive packages
 cd $(dirname $0)
 APPENDLOG=0
 
@@ -28,4 +26,4 @@ function run_test_script () {
     fi
 }
 
-run_test_script test_rtapas.R 
+run_test_script dev/test_rtapas.R 

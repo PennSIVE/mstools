@@ -236,3 +236,5 @@ RUN apt-get update && apt-get install -y \
 
 # badgecreatr
 RUN Rscript -e "remotes::install_github('rmhogervorst/badgecreatr', upgrade=TRUE)"
+
+WORKDIR /work
