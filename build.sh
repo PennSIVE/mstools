@@ -10,7 +10,7 @@
 # run these the first time:
 # docker buildx create --name mstools
 # docker builx use mstools
-docker buildx build --platform linux/arm64,linux/amd64 \
+docker buildx build --platform linux/amd64 \
     --build-arg BUILDKIT_INLINE_CACHE=1 \
     --cache-from=pennsive/mstools:4.2 \
     --cache-to=pennsive/mstools:4.2 \
