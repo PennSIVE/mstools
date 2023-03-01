@@ -14,7 +14,6 @@ docker buildx use mstools
 arch=$(uname -m | sed 's/x86_64/amd64/g') 
 docker buildx build --platform linux/$arch \
     --build-arg BUILDKIT_INLINE_CACHE=1 \
-    --cache-from=pennsive/mstools:4.2-$arch \
     -t pennsive/mstools:4.2-$arch \
     --load . &> $(date +"%Y-%m-%d_%T")_build.log
        
