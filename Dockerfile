@@ -175,9 +175,9 @@ RUN echo 'options(repos = c(CRAN = "https://cran.rstudio.com/"), download.file.m
              && make -j$(nproc) \
              && sudo make install \
              && alias cmake=$(which cmake) 
-RUN git clone https://github.com/stnava/ITKR.git && R CMD INSTALL ITKR && rm -rf ITKR \
-    && git clone https://github.com/ANTsX/ANTsRCore.git && R CMD INSTALL ANTsRCore && rm -rf ANTsRCore \
-    && git clone https://github.com/ANTsX/ANTsR.git && R CMD INSTALL ANTsR && rm -rf ANTsR
+RUN git clone https://github.com/stnava/ITKR.git && R CMD INSTALL ITKR && rm -rf ITKR 
+RUN git clone https://github.com/ANTsX/ANTsRCore.git && R CMD INSTALL ANTsRCore && rm -rf ANTsRCore
+RUN git clone https://github.com/ANTsX/ANTsR.git && R CMD INSTALL ANTsR && rm -rf ANTsR
 
 RUN Rscript -e "remotes::install_github('muschellij2/oasis', upgrade=TRUE)"
 # Install packages from source
